@@ -1,0 +1,10 @@
+<view class="goods_life">
+ <SearchInput></SearchInput>
+ <view class="goods"
+ wx:for="{{GoodsList}}"
+ >
+  <!-- <GoodsBox goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}" goods_url="{{item.url}}"></GoodsBox> -->
+  <GoodsBox bindtap="skipTravelDetails" data-id="{{item.id}}"
+    goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}"></GoodsBox>
+ </view>
+</view>

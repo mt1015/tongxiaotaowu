@@ -1,0 +1,56 @@
+<!-- 详情物品图片 -->
+<view class="goods_detail">
+  <view class="detail_banner">
+    <swiper>
+      <swiper-item><image src="{{goodsList[0].image_url}}"></image></swiper-item>
+    </swiper>
+  </view>
+  <!-- 中部标题价格、收藏 -->
+  <view class="content">
+    <view class="title_left">
+      <view class="price" style="color:red">
+        {{goodsList[0].price}}￥
+      </view>
+      <view class="name">
+        {{goodsList[0].name}}
+      </view>
+    </view>
+  <!-- 收藏 -->
+  <!-- <view class="right_collect">
+    <image src="/image/collect.png"></image>
+    <text>收藏</text>
+  </view> -->
+  </view>
+  <view class="ex_title">商品详情</view>
+  <view class="explain">
+    {{goodsList[0].explain}}
+  </view>
+  <!-- 底部操作按钮 -->
+  <view class="button">
+    <!-- <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+    <button open-type="contact"></button>
+    </view> -->
+  <!-- <view class="tool_item">
+    <view class="iconfont icon-yixianshi"></view>
+    <view>分享</view>
+    <button open-type="share"></button>
+  </view> -->
+  <!-- 前往购物车 -->
+  <!-- <navigator open-type="switchTab" url="/pages/cart/cart">
+  <view class="iconfont icon-gouwuche"></view>
+  <view>购物车</view>
+  </navigator> -->
+  <view class="btn_cart" bindtap="handleCartAdd">
+    <!-- <text>加入购物车</text> -->
+    <view class="cart">加入购物车</view>
+    
+  </view>
+  <!-- <view class="tool_item btn_buy">
+    立即购买
+  </view> -->
+  </view>
+  
+  
+</view>

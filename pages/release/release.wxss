@@ -1,0 +1,44 @@
+/* from{
+  margin: 20rpx;
+}
+.submit view{
+  border: 1px solid #666;
+  margin-bottom: 10rpx;
+} */
+.release{
+  background-color: #ccc;
+}
+/* 物品分类 */
+.section{
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 10rpx;
+  height: 30px;
+  padding-left: 10rpx;
+  color: var(--themeColor);
+  font-size: 40rpx;
+  background-color: #fff;
+}
+/* picker{
+  font-size: 50rpx;
+} */
+.section .more{
+  position: relative;
+  left: 540rpx;
+}
+.input,.price{
+  background-color: #fff;
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  margin: 2rpx;
+  height: 30px;
+  font-size: 35rpx;
+}
+.explain{
+  background-color: #fff;
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  margin: 2rpx;
+  height: 100px;
+  font-size: 35rpx;
+}

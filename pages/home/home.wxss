@@ -1,0 +1,73 @@
+/* 轮播图 */
+
+/* 分类导航 */
+.category{
+    display: flex;
+    flex-wrap: wrap;
+}
+.category_item{
+    display: block;
+    height: 100rppx;
+    width: 185rpx;
+    text-align: center;
+}
+.category_item image{
+    width: 160rpx;
+    height: 150rpx;
+}
+
+/* 首页内容标题 */
+.pubTitle{
+    display: flex;
+    justify-content: space-between;
+    height: 70rpx;
+    /* border: 1px solid red; */
+    align-items: centers;
+    margin-top: 30rpx;
+}
+.pubTitle .txt{
+    font-size: 45rpx;
+    height: 100%;
+    position: relative;
+    padding-left: 20rpx;
+}
+.pubTitle .txt::before{
+    display: block;
+    width: 8rpx;
+    height: 45rpx;
+    background: #d80b07;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 40%;
+    margin-top: -15rpx;
+}
+.pubTitle .more{
+    font-size: 34rpx;
+    color: #666;
+}
+
+/* 首页内容 */
+.content{
+    /* 背景颜色 */
+    background-color: #f0f3f8;
+}
+
+.box_father{
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    width: 800rpx;
+    height: 500rpx;
+}
+.box_father .box{
+  display: flex;
+  flex-direction: column;
+  width: 350rpx;
+  height: 500rpx;
+  margin: 10rpx;
+  border: 1px solid #666;
+  border-radius: 3%;
+}
+
+

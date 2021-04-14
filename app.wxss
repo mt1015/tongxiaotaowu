@@ -1,0 +1,16 @@
+/**app.wxss**/
+/*引用阿里巴巴图库标签*/
+@import "./styles/iconfont.wxss";
+
+/*主题颜色、字体大小*/
+page{
+    --themeColor:#CA6969;
+    font-size: 30rpx;
+}
+
+/* page,view,text,swiper,swiper-item,image,navigator{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+

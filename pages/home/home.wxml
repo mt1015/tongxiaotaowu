@@ -1,0 +1,76 @@
+<veiw class="txtw_home">
+    <!-- 搜索框 -->
+    <SearchInput></SearchInput>
+</veiw>
+<!-- 轮播图 -->
+<view class="home_banner">
+        <swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}">
+            <swiper-item class="c1"><image src="/image/banner5.jpg" /></swiper-item>
+            <swiper-item class="c2"><image src="/image/banner5.jpg" /></swiper-item>
+            <swiper-item class="c3"><image src="/image/banner5.jpg" /></swiper-item>
+            <swiper-item class="c4"><image src="/image/banner5.jpg" /></swiper-item>
+        </swiper>
+</view>
+<!-- 分类导航 -->
+<view class="category">
+    <view class="category_item">
+        <navigator url="../goods_life/goods_life">
+            <image src="/image/shenghuo.png"></image>
+            <taxt>生活用品</taxt>
+        </navigator>
+    </view>
+     <view class="category_item">
+        <navigator url="../goods_list/goods_list">
+            <image src="/image/learn.png"></image>
+            <taxt>学习用品</taxt>
+        </navigator>
+    </view>
+    <view class="category_item">
+        <navigator url="../goods_sport/goods_sport">
+            <image src="/image/sport.png"></image>
+           <taxt>体育器材</taxt>
+        </navigator>
+    </view>
+    <view class="category_item">
+        <navigator url="../goods_meizhuang/goods_meizhuang">
+            <image src="/image/meizhuang.png"></image>
+           <taxt> 美妆 </taxt>
+        </navigator>
+    </view>
+    <view class="category_item">
+        <navigator url="../goods_dianqi/goods_dianqi">
+            <image src="/image/dianqi.png"></image>
+            <taxt style="taxt">电器</taxt>
+        </navigator>
+    </view>
+    <view class="category_item">
+        <navigator url="../goods_other/goods_other">
+            <image src="/image/other.png"></image>
+           <taxt>其他</taxt>
+        </navigator>
+    </view>
+</view>
+<!-- 分类内容 -->
+<view class="content">
+    <!-- 标题 -->
+    <view class="pubTitle">
+        <view class="txt">猜你喜欢</view>
+            <navigator class="more" url="">更多></navigator>
+    </view>
+    <!-- 商品卡片展示 -->
+    <view class="box_father">
+        <view class="box"
+    wx:for="{{GoodsList}}">
+        <!-- 调用box组件实现商品卡片 -->
+        <Box bindtap="skipTravelDetails" data-id="{{item.id}}" goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}" goods_url=""></Box>
+        
+    </view>
+    </view>
+    
+</view>
+
+
+
+
+
+

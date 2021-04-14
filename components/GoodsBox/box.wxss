@@ -1,0 +1,36 @@
+.box_item {
+  display: flex;
+  flex-wrap: nowrap;
+  border: 1px solid #666;
+}
+.box_item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box_item .left_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  width: 250rpx;
+}
+.box_item .left_box image {
+  height: 150rpx;
+  width: 150rpx;
+}
+.title{
+  padding-top: 10rpx;
+}
+.right_box{
+  padding-top: 20rpx;
+}
+.right_price{
+  padding-top:60rpx;
+}
+.box_item .right_box .price {
+  position: relative;
+  bottom: 10;
+  color: red;
+  font-size: 40rpx;
+}

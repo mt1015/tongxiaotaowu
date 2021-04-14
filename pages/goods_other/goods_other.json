@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SearchInput":"../../components/SearchInput/SearchInput",
+    "GoodsBox":"../../components/GoodsBox/box"
+  },
+  "navigationBarTitleText": "其他分类"
+}

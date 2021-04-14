@@ -1,0 +1,12 @@
+<view class="goods_life">
+ <SearchInput></SearchInput>
+ <view>
+  <navigator class="goods"  
+  wx:for="{{GoodsList}}"
+  wx:key="index"
+  >
+    <GoodsBox bindtap="skipTravelDetails" data-id="{{item.id}}"
+    goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}"></GoodsBox>
+  </navigator>
+ </view>
+</view>

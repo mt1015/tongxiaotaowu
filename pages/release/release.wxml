@@ -1,0 +1,50 @@
+<!--pages/release/release.wxml-->
+<view class="release">
+<form class="submit" bindsubmit="formSubmit">
+    <!-- 选择物品分类 -->
+    <view class="section">
+      <picker name="category" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+      <view class="more">></view>
+    </view>
+    <!-- 输入物品名称 -->
+    <view class="input">
+      <input type="text" name="name" placeholder="物品名称" maxlength="30" focus="ture"/>
+    </view>
+    <!-- 输入物品价格 -->
+    <view class="price">
+      <input name="price" type="number" placeholder="请输入物品价格（元）"/>
+    </view>
+    <!-- 联系方式 -->
+    <view class="input">
+      <input name="tel" type="number" placeholder="请输入联系方式"/>
+    </view>
+    <!-- 输入物品详细说明 -->
+    <view class="explain">
+      <textarea name="explain" cols="30" rows="10" placeholder="请输入详细的物品说明"></textarea>
+    </view>
+
+    <!-- 图片上传 -->
+    <!-- <input type="text" name="image_url" /> -->
+  <view class="weui-uploader">
+  <view class="img-v weui-uploader__bd">
+    <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+        <image  class='weui-uploader__img ' name='image_url'
+                src="{{item}}"
+                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+        </image>
+    </view>
+      <!-- 用来提示用户上传图片 -->
+      <view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
+    </view>
+      <button class="upload-img-btn" bindtap="chooseImg" type='primary'>拍照  / 上传</button>
+    </view>
+    <!-- 发送按钮 -->
+    <button form-type="submit">确定</button>
+</form>
+</view>
+

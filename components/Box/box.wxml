@@ -1,0 +1,8 @@
+<view class="box_item">
+  <navigator url="{{goods_url}}">
+    <image src="{{goods_src}}"></image>
+      <label for="">{{goods_title}}</label>
+      <text>\n</text>
+      <label class="price" for="">{{goods_price}}￥</label>
+  </navigator>
+</view>

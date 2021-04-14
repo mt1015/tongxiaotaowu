@@ -1,0 +1,28 @@
+<!--pages/search/search.wxml-->
+<!-- <view class="search"> -->
+  <!-- 绑定input事件 -->
+  <!-- <input value="{{inpValue}}" placeholder="请输入你要搜索的商品" bindinput="handleInput"></input>
+  <button bindtap="handleCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+<view class="search_content">
+  <navigator url="/pages/goods_detail/index?id={{item.id}}" class="search_item"
+  wx:for="{{goods}}"
+  wx:if="id">{{item.name}}</navigator>
+</view> -->
+<!-- 表单 -->
+<form bindsubmit="formSubmit">
+  <view class="search">
+   <!-- 记得设置name值，这样JS才能接收name=keyword的值 -->
+    <input type="text" name="keyword" class="search_input" placeholder='请输入商品名称'/>
+    <button formType="submit" class="search_btn">搜索</button>    
+  </view>
+</form>
+  
+ <!-- 搜索结果展示 -->
+ <view class="search_result"
+ wx:for="{{goodsList}}"
+ wx:if="error=='false'">
+     <GoodsBox goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}" goods_url="/pages/goods_detail/goods_detail"></GoodsBox>
+ </view>
+
+

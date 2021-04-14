@@ -1,0 +1,23 @@
+<!-- <view class="box_item">
+  <navigator url="{{goods_url}}">
+    <image src="{{goods_src}}"></image>
+      <label for="">{{goods_title}}</label>
+      <text>\n</text>
+      <label class="price" for="">{{goods_price}}￥</label>
+  </navigator>
+</view> -->
+
+<navigator class="box_item" url="{{goods_url}}">
+  <!-- <navigator url="{{goods_url}}"> -->
+  <view class="left_box">
+    <image src="{{goods_src}}"></image>
+  </view>
+  <view class="right_box">
+    <label class="title" for="">{{goods_title}}</label>
+    <text>\n</text>
+    <view class="right_price">
+      <label class="price" for="">{{goods_price}}￥</label>
+    </view>
+  </view>
+</navigator>
+  <hr />

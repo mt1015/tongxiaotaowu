@@ -1,0 +1,12 @@
+<view class="section">
+ <form bindsubmit="bindFormSubmit">
+  <textarea placeholder="请输入问题内容" name="content"/>
+  <view class="">
+   选择提问图片:  <label bindtap="checkimg">点击选择图片</label>
+  </view>
+  <view class="">
+    <image wx:for="{{imglist}}" mode="aspectFit" bindtap="ylimg" data-src="{{item}}" style="width:75px;height:75px;" src="{{item}}"></image>
+  </view>
+  <button form-type="submit"> 提交 </button>
+ </form>
+</view>

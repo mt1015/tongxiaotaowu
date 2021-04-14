@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SearchInput":"../../components/SearchInput/SearchInput",
+    "Box":"../../components/Box/box"
+  },
+  "navigationBarTitleText": "同校淘物"
+}

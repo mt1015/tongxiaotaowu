@@ -1,0 +1,31 @@
+.box_item{
+    display: flex;
+    flex-wrap: nowrap;
+    border:1px solid #666;
+}
+navigator{
+    display: flex;
+    flex-wrap: wrap;
+    .left_box{
+        display: flex;
+        //内容居中
+        justify-content: center;
+        //垂直居中
+        align-items: center;
+        height: 200rpx;
+        width: 250rpx;
+        image{
+            height: 150rpx;
+            width: 150rpx;
+        }
+    }
+    .right_box{
+        .price{
+            // position: fixed;
+            // bottom: 0px;
+            color: red;
+            font-size: 40rpx;
+        }
+    }
+    
+}

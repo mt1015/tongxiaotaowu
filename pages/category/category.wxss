@@ -1,0 +1,22 @@
+Page {
+  height: 100%;
+}
+.cates .content {
+  height: calc( 100vh - 90rpx );
+  display: flex;
+}
+.cates .content .left_menu {
+  flex: 2;
+  display: flex;
+  background-color: antiquewhite;
+}
+.cates .content .left_menu .menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 35rpx;
+  align-items: center;
+}
+.cates .content .right_goods {
+  flex: 5;
+}

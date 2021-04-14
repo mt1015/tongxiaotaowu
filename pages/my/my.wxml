@@ -1,0 +1,27 @@
+<view class="user_info_wrap">
+    <view class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+            <view class="user_name">{{userinfo.nickName}}</view>
+        </view>
+    </view>
+</view>
+<view class="tool">
+    <!-- <navigator class="collect" url="../collect/collect">
+    收藏
+    </navigator> -->
+    <navigator class="myrelease" url="../myRelease/myRelease">
+        我的发布
+    </navigator>
+    <navigator class="login" url="../login/login">
+        登录
+    </navigator>
+    <navigator class="advice" url="../advice/advice">
+        意见反馈
+    </navigator>
+    <navigator class="about" url="../about/about">
+        关于我们
+    </navigator>
+</view>
+
