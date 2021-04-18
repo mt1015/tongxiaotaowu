@@ -1,5 +1,5 @@
 /* pages/upload/upload.wxss */
-.img{
+/* .img{
   display: inline-block;
 }
  
@@ -36,7 +36,7 @@ margin-bottom:9px;
   font-size: 24rpx;
   text-indent: 15rpx;
   border-bottom: 1px solid #ccc;
-}
+} */
  
 /* .input {
   display: inline-block;
@@ -51,7 +51,6 @@ margin-bottom:9px;
 .input-15{
   margin-left: 7%;
   display: inline-block;
-  /* border: 1px solid #ccc; */
   line-height: 80rpx;
   vertical-align: middle;
   width: 75%;

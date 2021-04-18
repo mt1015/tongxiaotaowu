@@ -1,12 +1,58 @@
-<view class="section">
- <form bindsubmit="bindFormSubmit">
-  <textarea placeholder="请输入问题内容" name="content"/>
-  <view class="">
-   选择提问图片:  <label bindtap="checkimg">点击选择图片</label>
-  </view>
-  <view class="">
-    <image wx:for="{{imglist}}" mode="aspectFit" bindtap="ylimg" data-src="{{item}}" style="width:75px;height:75px;" src="{{item}}"></image>
-  </view>
-  <button form-type="submit"> 提交 </button>
- </form>
+<view class="container">
+  <form bindsubmit='publishTiding'>
+    <view class="basicBox">
+      <view>
+        <view class="titlebox">
+          <text>选择标签</text>
+        </view>
+      </view>
+      <view class="basicInfo">
+        <view>
+          <radio-group bindchange="radioChange" name="status">
+            <label class="radioGroup" wx:for="{{items}}" wx:key="value" wx:for-item="i">
+              <view>
+                <radio value="{{i.value}}" checked="{{i.checked}}" />
+              </view>
+              <view>{{i.name}}</view>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+
+    <view class="contactBox">
+      <view>
+        <view class="titlebox">
+          <text>输入内容</text>
+        </view>
+      </view>
+      <view class="contactInfo">
+        <view class="other">
+          <textarea cols="30" rows="8" name="tidingsRemarks" placeholder="必填"></textarea>
+        </view>
+      </view>
+    </view>
+
+    <view class="uploadImgbox">
+      <view>
+        <view class="titlebox">
+          <text>最多可上传3张图片</text>
+        </view>
+      </view>
+      <view>
+        <view class='eachImgbox' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+          <image class='eachImg' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+            <icon type='cancel' class="delete_btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+          </image>
+        </view>
+      </view>
+      
+      <!-- <button class="upimg_btn" bindtap="chooseImg">拍照 / 上传</button> -->
+    </view>
+
+    <view class="footerComfirm">
+      <button type="primary" form-type='submit'>确认</button>
+    </view>
+  </form>
+  <button bindtap="chooseImg">上传图片</button>
 </view>

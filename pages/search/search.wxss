@@ -5,8 +5,9 @@
   flex-wrap: nowrap;
 }
 .search_input{
-  width: 247px;
-  height: 28px;
+  /* width: 247px; */
+  width: 3000rpx;
+  height: 60rpx;
   background-color: #fff;
   border: 1rpx solid #ccc;
 }

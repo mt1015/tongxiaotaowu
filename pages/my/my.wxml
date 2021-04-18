@@ -14,10 +14,10 @@
     <navigator class="myrelease" url="../myRelease/myRelease">
         我的发布
     </navigator>
-    <navigator class="login" url="../login/login">
+    <navigator class="login" url="../login2/login2">
         登录
     </navigator>
-    <navigator class="advice" url="../advice/advice">
+    <navigator class="advice" url="../suggestion/suggestion">
         意见反馈
     </navigator>
     <navigator class="about" url="../about/about">
