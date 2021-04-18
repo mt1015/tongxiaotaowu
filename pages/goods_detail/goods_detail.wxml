@@ -25,6 +25,9 @@
   <view class="explain">
     {{goodsList[0].explain}}
   </view>
+  <view class="tel">
+    请联系我：{{goodsList[0].tel}}
+  </view>
   <!-- 底部操作按钮 -->
   <view class="button">
     <!-- <view class="tool_item">

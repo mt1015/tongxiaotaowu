@@ -40,4 +40,11 @@ Page({
       }
     })
   },
+  skipTravelDetails:function(e){
+    let id=e.currentTarget.dataset.id //获取点击产品时拿到的id，就是data-id传过来的值
+        // wx.navigateTo跳转页面的方法
+        wx.navigateTo({
+            url: "../goods_detail/goods_detail?id="+id,
+        })
+  }
 })

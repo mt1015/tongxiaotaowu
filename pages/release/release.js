@@ -1,10 +1,12 @@
+var util = require('../../utils/util.js');
 const app = getApp()
 Page({
 data: {
   imgs: [],
   array: ['学习用品', '生活用品', '体育器材', '美妆', '电器','其他'],
-  index:0
+  index:0,
 },
+
 //接受选中的物品分类
 bindPickerChange: function (e) {
   console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -17,7 +19,7 @@ bindPickerChange: function (e) {
 chooseImg: function (e) {
   var that = this;
   var imgs = this.data.imgs;
-  if (imgs.length >= 9) {
+  if (imgs.length >= 1) {
     this.setData({
       lenMore: 1
     });
@@ -29,16 +31,14 @@ chooseImg: function (e) {
     return false;
   }
   wx.chooseImage({
-    count: 1, // 默认9
-    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+    count: 1,
+    sizeType: ['original', 'compressed'],
+    sourceType: ['album', 'camera'],
     success: function (res) {
-      // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
       var tempFilePaths = res.tempFilePaths;
       var imgs = that.data.imgs;
-      // console.log(tempFilePaths + '----');
       for (var i = 0; i < tempFilePaths.length; i++) {
-        if (imgs.length >= 9) {
+        if (imgs.length >= 1) {
           that.setData({
             imgs: imgs
           });
@@ -47,14 +47,17 @@ chooseImg: function (e) {
           imgs.push(tempFilePaths[i]);
         }
       }
-      // console.log(imgs);
       that.setData({
         imgs: imgs
       });
-    }
+    },
+    fail:function(errInfo) {
+      console.info(errInfo) 
+     }
   });
+  
+  
 },
-// 删除图片
 deleteImg: function (e) {
   var imgs = this.data.imgs;
   var index = e.currentTarget.dataset.index;
@@ -63,16 +66,11 @@ deleteImg: function (e) {
     imgs: imgs
   });
 },
-// 预览图片
 previewImg: function (e) {
-  //获取当前图片的下标
   var index = e.currentTarget.dataset.index;
-  //所有图片
   var imgs = this.data.imgs;
   wx.previewImage({
-    //当前显示图片
     current: imgs[index],
-    //所有图片
     urls: imgs
   })
 },
@@ -83,34 +81,78 @@ previewImg: function (e) {
 //点击发送按钮，触发上传数据到数据库操作
 formSubmit: function (e) {
   console.log(e.detail.value);
-  wx.request({
-    //调用上传数据接口
-    url: 'http://localhost:8081/myphp/app.php?action=create',
-    header: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    method: "POST",
-    //上传服务器的数据（要与接口中写的参数一致）
-    data: { name: e.detail.value.name, category: e.detail.value.category, 
-      price: e.detail.value.price,tel:e.detail.value,explain:e.detail.value.explain,image_url:e.detail.value.imgs},
-    success: function (res) {
-      console.log(res.data);  //打印接口返回信息
-      if (res.data.status == 0) {
-        //提交失败toast
-        wx.showToast({
-        title: '提交商品信息失败！',
-        icon: 'loading',
-        duration: 1500
-        })
-      } else {
-        //提交成功toast
-        wx.showToast({
-          title: '提交商品信息成功！',
-          icon: 'success',
-          duration: 1000
+  var that=this;
+  let name=e.detail.value.name;
+  let category=e.detail.value.category;
+  let price=e.detail.value.price;
+  let tel=e.detail.value.tel;
+  let explain=e.detail.value.explain;
+  // let openid=wx.getStorageSync('oppenid');
+  var openid=wx.getStorageSync('openid');
+  console.log(openid);
+  if(name==''){
+    wx.showToast({
+      title: '名称不能为空！',
+      icon: 'error',
+      duration: 1000
+    })
+  }else if(tel==''){
+    wx.showToast({
+      title: '联系方式不为空！',
+      icon: 'error',
+      duration: 1000
+    })
+  }else{
+        wx.request({
+          url: 'http://localhost:8081/myphp/app.php?action=create',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data:{
+            openid:openid,
+            name: name,
+            category: category, 
+            price: price,
+            tel: tel,
+            explain: explain,
+            image_url:that.data.imgs
+          },
+          //如果上传成功，则开始上传图片
+          success:function(res){
+            if(that.data.imgs!=''){
+              wx.uploadFile({
+                filePath: that.data.imgs,
+                name: 'file',
+                formData: {
+                  'wtid': res.data
+                 },
+                url: 'http://localhost:8081/myphp/app.php?action=upload',
+              })
+            }
+            if (res.data.error==false) {
+              wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 1000,
+                success: function () {
+                  setTimeout(function () {
+                    wx.reLaunch({
+                      url: '/pages/myRelease/myRelease',
+                    })
+                  }, 1000);
+                }
+              })
+            }
+            else{
+              wx.showToast({
+                title: '添加成功',
+                icon: 'success',
+                duration: 2000
+              })
+            }
+          }
         })
       }
-    }
-  })
-},
+  }
 })

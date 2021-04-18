@@ -1,7 +1,7 @@
 /* pages/login/login.wxss */
 .headView {
 
-  margin: 90rpx 50rpx 90rpx 50rpx;
+  margin:90rpx 50rpx 90rpx 50rpx;
   /*上右下左*/
 
 }
@@ -10,11 +10,11 @@
 
   display: block;
 
-  margin-left: 25px;
+  margin-left: 80px;
 
   margin-top: 25px;
 
-  margin-right: 25px;
+  /* margin-right: 500px; */
 
   margin-bottom: 0px;
 
@@ -34,17 +34,17 @@
 
 .titleText {
 
-  margin-left: 25px;
+  margin-left:25px;
 
-  margin-top: 25px;
+  margin-top:25px;
 
-  margin-bottom: 10px;
+  margin-bottom:10px;
 
-  font-size: 14px;
+  font-size:14px;
 
   color: #020e0f;
 
-  text-align: center;
+  text-align:center;
 
 }
 

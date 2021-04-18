@@ -1,66 +1,36 @@
-// pages/myRelease/myRelease.js
+import { request} from "../../request/index.js";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    //分类
+    // MenuList:[],
+    GoodsList:[]
   },
+  // Cates:[],
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.getCates();
+    // this.getGoods();
+  },
+  //获取分类接口数据
+  getCates(){
+    var openid=wx.getStorageSync('openid')
+    // console.log(openid)
+    request({
+      // url: 'http://localhost:8081/myphp/app.php?action=read'
+      url: 'http://localhost:8081/myphp/mygoods.php?action=read&openid='+openid
+    })
+    .then(res=>{
+      this.setData({
+        GoodsList:res.data.message
+      })
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  skipTravelDetails:function(e){
+    let id=e.currentTarget.dataset.id //获取点击产品时拿到的id，就是data-id传过来的值
+        // wx.navigateTo跳转页面的方法
+        wx.navigateTo({
+            url: "../goods_detail/goods_detail?id="+id,
+        })
   }
-})
+ })

@@ -1,7 +1,19 @@
-<view class="my_goods">
+<!-- <view class="my_goods">
 我发布的商品
 分类：
 审核未通过
 已上架
 已卖出
+</view> -->
+<view class="goods_life">
+ <SearchInput></SearchInput>
+ <view>
+  <navigator class="goods"  
+  wx:for="{{GoodsList}}"
+  wx:key="index"
+  >
+    <GoodsBox bindtap="skipTravelDetails" data-id="{{item.id}}"
+    goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}"></GoodsBox>
+  </navigator>
+ </view>
 </view>

@@ -22,7 +22,8 @@
  <view class="search_result"
  wx:for="{{goodsList}}"
  wx:if="error=='false'">
-     <GoodsBox goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}" goods_url="/pages/goods_detail/goods_detail"></GoodsBox>
+ <GoodsBox bindtap="skipTravelDetails" data-id="{{item.id}}"
+    goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}"></GoodsBox>
  </view>
 
 

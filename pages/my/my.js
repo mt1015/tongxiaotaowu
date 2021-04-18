@@ -5,7 +5,7 @@ Page({
     userinfo:{}
   },
   onShow(){
-    const userinfo=wx.getStorageSync('userinfo');
+    const userinfo=wx.getStorageSync('userInfo');
     this.setData({userinfo})
   }
 })
