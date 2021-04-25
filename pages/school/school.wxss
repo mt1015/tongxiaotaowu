@@ -1,0 +1,16 @@
+/* pages/school/school.wxss */
+text{
+  font-size: 45rpx;
+  margin: 20rpx;
+  padding-bottom: 20rpx;
+}
+.school_list{
+  display: flex;
+  height: 100rpx;
+  padding-left: 20rpx;
+  margin-top: 10rpx;
+  border: solid 1rpx #ccc;
+  /* justify-content: center; */
+  align-items: center;
+  color: var(--themeColor);
+}

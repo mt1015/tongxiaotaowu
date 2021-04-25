@@ -12,7 +12,7 @@ Page({
     // var that=this;
     let content=e.detail.value.content;
     console.log(content);
-    if(content!=''){
+    if(content!=''&&content.length<1000){
       wx.request({
         url: 'http://localhost:8081/myphp/suggestion.php?action=create',
         method: 'POST',

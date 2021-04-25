@@ -1,1 +1,76 @@
 /* pages/myRelease/myRelease.wxss */
+/*顶部tab样式*/
+.tab{
+  display: flex;
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  flex-flow: row;
+  justify-content: space-between;
+}
+/*选中样式*/
+.title-sel-selected{
+  width: 50%;
+  color: var(--themeColor);
+  font-weight: 800;
+}
+/*未选中样式*/
+.title-sel{
+  width: 50%;
+}
+
+
+
+.goods{
+  display: flex;
+}
+.btn{
+  position: absolute;
+  width: 50rpx;
+  height: 80rpx;
+  font-size: 45rpx;
+  flex: 1;
+  left:500rpx;
+  padding-top: 50rpx;
+  justify-items: center;
+  align-content: center;
+}
+.box_item {
+  display: flex;
+  flex: 3;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #666;
+}
+/* .box_item {
+  display: flex;
+  flex-wrap: wrap;
+} */
+.box_item .left_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  width: 250rpx;
+}
+.box_item .left_box image {
+  height: 150rpx;
+  width: 150rpx;
+}
+.title{
+  padding-top: 10rpx;
+}
+.right_box{
+  padding-top: 20rpx;
+}
+.right_price{
+  padding-top:60rpx;
+}
+.box_item .right_box .price {
+  position: relative;
+  bottom: 10;
+  color: red;
+  font-size: 40rpx;
+}

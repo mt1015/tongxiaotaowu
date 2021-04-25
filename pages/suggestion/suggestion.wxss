@@ -3,3 +3,6 @@
   margin: 2rpx;
   border: 1px solid #ccc;
 }
+button{
+  color: var(--themeColor);
+}

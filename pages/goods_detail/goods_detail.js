@@ -4,24 +4,32 @@ Page({
     //分类
     // MenuList:[],
     goodsList:{},
-    id:null
+    id:null,
+    currentIndex:2
   },
   GoodsInfo:{},
   onLoad: function (options){
     console.log(options);
     let id=options.id;
+    let currentIndex=options.currentIndex;
     this.setData({
-      id
+      id,
+      currentIndex
     }),
     this.getCates();
   },
 
 // 点击 加入购物车
-handleCartAdd() {
+handleCartAdd:function(e) {
+  console.log(e);
+  console.log(e.data);
+  console.log(e.detail);
+  console.log(e.goodsList);
   // 1 获取缓存中的购物车 数组
   let cart = wx.getStorageSync("cart") || [];
   // 2 判断 商品对象是否存在于购物车数组中
   let index = cart.findIndex(v => v.id === this.GoodsInfo.id);
+  console.log(this.GoodsInfo);
   if (index === -1) {
     //3  不存在 第一次添加
     this.GoodsInfo.num = 1;
@@ -42,7 +50,7 @@ handleCartAdd() {
   });
 },
 
-  //获取分类接口数据
+  //获取商品详情数据
   getCates(){
     var id=this.data.id
     request({
@@ -51,7 +59,7 @@ handleCartAdd() {
     })
     .then(res=>{
       this.setData({
-        goodsList:res.data.message
+        goodsList:res.data.message,
       })
     })
     // this.GoodsInfo=goodsList.data

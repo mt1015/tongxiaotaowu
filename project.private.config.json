@@ -99,6 +99,19 @@
         {
           "name": "pages/suggestion/suggestion",
           "pathName": "pages/suggestion/suggestion",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/school/school",
+          "pathName": "pages/school/school",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mydata/mydata",
+          "pathName": "pages/mydata/mydata",
+          "query": "",
           "scene": null
         }
       ]

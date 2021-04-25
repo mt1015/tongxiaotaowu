@@ -29,7 +29,7 @@
     请联系我：{{goodsList[0].tel}}
   </view>
   <!-- 底部操作按钮 -->
-  <view class="button">
+  <view class="button" wx:if="{{currentIndex==2}}">
     <!-- <view class="tool_item">
     <view class="iconfont icon-kefu"></view>
     <view>客服</view>
@@ -47,7 +47,7 @@
   </navigator> -->
   <view class="btn_cart" bindtap="handleCartAdd">
     <!-- <text>加入购物车</text> -->
-    <view class="cart">加入购物车</view>
+    <view class="cart" data-id="{{id}}">加入购物车</view>
     
   </view>
   <!-- <view class="tool_item btn_buy">

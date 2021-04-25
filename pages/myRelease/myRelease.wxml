@@ -5,15 +5,48 @@
 已上架
 已卖出
 </view> -->
+
+
 <view class="goods_life">
- <SearchInput></SearchInput>
- <view>
-  <navigator class="goods"  
+  <view class="tab">
+    <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+    <text>已发布</text>
+    <hr class="line-style"/>
+    </view>  
+    <view class="{{-1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='-1'>
+      <text>已下架</text>
+      <hr class="line-style"/>
+    </view>
+  </view>
+  
+
+
+
+ <view class="my_fabu">
+  <view class="goods"  
   wx:for="{{GoodsList}}"
   wx:key="index"
   >
-    <GoodsBox bindtap="skipTravelDetails" data-id="{{item.id}}"
-    goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}"></GoodsBox>
+  <navigator bindtap="skipTravelDetails" data-id="{{item.id}}" data-index="{{currentIndex}}" class="box_item" url="">
+  <!-- <navigator url="{{goods_url}}"> -->
+    <view class="left_box">
+      <image src="{{item.image_url}}"></image>
+    </view>
+    <view class="right_box">
+      <label class="title" for="">{{item.name}}</label>
+      <text>\n</text>
+      <view class="right_price">
+        <label class="price" for="">{{item.price}}￥</label>
+      </view>
+    </view>
+    
   </navigator>
+  <view class="btn">
+    <button wx:if="{{currentIndex==0}}" style="width:200rpx" bindtap="OffGoods" data-id="{{item.id}}">{{btn}}</button>
+    <button wx:if="{{currentIndex==-1}}" style="width:250rpx">已下架</button>
+  </view>
+  
+ </view>
+  
  </view>
 </view>

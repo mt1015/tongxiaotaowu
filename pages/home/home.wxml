@@ -5,10 +5,13 @@
 <!-- 轮播图 -->
 <view class="home_banner">
         <swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}">
-            <swiper-item class="c1"><image src="/image/banner5.jpg" /></swiper-item>
-            <swiper-item class="c2"><image src="/image/banner5.jpg" /></swiper-item>
-            <swiper-item class="c3"><image src="/image/banner5.jpg" /></swiper-item>
-            <swiper-item class="c4"><image src="/image/banner5.jpg" /></swiper-item>
+            <navigator url="../release/release">
+                <swiper-item class="c1"><image src="/image/banner01.jpg" /></swiper-item>
+            </navigator>
+            
+            <swiper-item class="c2"><image src="/image/banner01.jpg" /></swiper-item>
+            <swiper-item class="c3"><image src="/image/banner01.jpg" /></swiper-item>
+            <swiper-item class="c4"><image src="/image/banner01.jpg" /></swiper-item>
         </swiper>
 </view>
 <!-- 分类导航 -->

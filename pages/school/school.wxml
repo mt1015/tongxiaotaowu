@@ -1,0 +1,9 @@
+<!--pages/school/school.wxml-->
+<view class="school">
+  <text class="title">请选择你的学校</text>
+  <view class="school_list" wx:for="{{objectArray}}" data-id="{{item.id}}" bindtap="SelectSchool"
+  wx:key="id">
+    {{item.message}}
+  </view>
+</view>
+

@@ -1,6 +1,9 @@
 from{
   margin: 20rpx;
 }
+.button{
+  color: var(--themeColor);
+}
 
 /* .submit view{
   border: 1px solid #666;
