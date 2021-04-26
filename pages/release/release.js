@@ -88,8 +88,7 @@ formSubmit: function (e) {
   let tel=e.detail.value.tel;
   let explain=e.detail.value.explain;
   // let openid=wx.getStorageSync('oppenid');
-  var openid=wx.getStorageSync('openid');
-  console.log(openid);
+  var openid=wx.getStorageSync('openid');  //从缓存中拿到发布者的openid
   if(name==''){
     wx.showToast({
       title: '名称不能为空！',
@@ -120,14 +119,17 @@ formSubmit: function (e) {
           },
           //如果上传成功，则开始上传图片
           success:function(res){
+            
             if(that.data.imgs!=''){
+              console.log(res.data[0]);
               wx.uploadFile({
-                filePath: that.data.imgs,
+                url: 'http://localhost:8081/myphp/upload.php?',
+                filePath: that.data.imgs[0],
                 name: 'file',
                 formData: {
-                  'wtid': res.data
+                  'newid': res.data.id
                  },
-                url: 'http://localhost:8081/myphp/app.php?action=upload',
+                
               })
             }
             if (res.data.error==false) {
@@ -136,11 +138,11 @@ formSubmit: function (e) {
                 icon: 'success',
                 duration: 1000,
                 success: function () {
-                  setTimeout(function () {
-                    wx.reLaunch({
-                      url: '/pages/myRelease/myRelease',
-                    })
-                  }, 1000);
+                  // setTimeout(function () {
+                  //   wx.reLaunch({
+                  //     url: '/pages/myRelease/myRelease',
+                  //   })
+                  // }, 1000);
                 }
               })
             }

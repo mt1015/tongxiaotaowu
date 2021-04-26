@@ -21,10 +21,6 @@ Page({
 
 // 点击 加入购物车
 handleCartAdd:function(e) {
-  console.log(e);
-  console.log(e.data);
-  console.log(e.detail);
-  console.log(e.goodsList);
   // 1 获取缓存中的购物车 数组
   let cart = wx.getStorageSync("cart") || [];
   // 2 判断 商品对象是否存在于购物车数组中
