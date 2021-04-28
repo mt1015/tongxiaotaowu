@@ -21,7 +21,14 @@ Page({
 
 // 点击 加入购物车
 handleCartAdd:function(e) {
-  // 1 获取缓存中的购物车 数组
+  var openid=wx.getStorageSync('openid');
+  if(openid==''){
+    wx.showToast({
+      title: '请先登录',
+      icon: 'none'
+    })
+  }else{
+    // 1 获取缓存中的购物车 数组
   let cart = wx.getStorageSync("cart") || [];
   // 2 判断 商品对象是否存在于购物车数组中
   let index = cart.findIndex(v => v.id === this.GoodsInfo.id);
@@ -44,6 +51,8 @@ handleCartAdd:function(e) {
     // true 防止用户 手抖 疯狂点击按钮 
     mask: true
   });
+  }
+  
 },
 
   //获取商品详情数据

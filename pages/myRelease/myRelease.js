@@ -5,7 +5,8 @@ Page({
     // MenuList:[],
     currentIndex: 0,
     GoodsList:[],
-    btn:'下架'
+    btn:'下架',
+    openid:''
   },
 
  //swiper切换时会调用
@@ -33,6 +34,10 @@ titleClick: function (e) {
   // Cates:[],
   onLoad: function (options) {
     this.getCates();
+    var openid=wx.getStorageSync('openid');
+    this.setData({
+      openid
+    })
     // this.getGoods();
   },
   //获取分类接口数据

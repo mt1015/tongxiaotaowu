@@ -1,4 +1,4 @@
-<view class="user_info_wrap">
+<view class="user_info_wrap" wx:if="{{openid!=''}}">
     <view class="user_img_wrap">
         <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
         <view class="user_info">
@@ -7,16 +7,25 @@
         </view>
     </view>
 </view>
-<view class="tool">
+<view class="user_info_wrap" wx:else>
+    <view class="user_img_wrap">
+        <image class="user_bg"></image>
+        <view class="user_info">
+            <!-- <button bindtap="login">登录</button> -->
+            <button bindtap="getUserProfile">点击登录</button>
+        </view>
+    </view>
+</view>
+<view class="tool" wx:if="{{openid!=''}}">
     <!-- <navigator class="collect" url="../collect/collect">
     收藏
     </navigator> -->
     <navigator class="myrelease" url="../myRelease/myRelease">
         我的发布
     </navigator>
-    <navigator class="login" url="../login2/login2">
+    <!-- <navigator class="login" url="../login2/login2">
         登录
-    </navigator>
+    </navigator> -->
     <navigator class="data" url="../mydata/mydata">
         我的资料
     </navigator>

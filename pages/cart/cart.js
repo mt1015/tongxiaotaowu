@@ -7,9 +7,13 @@ Page({
     allChecked: false,
     // hasList:false,          // 列表是否有数据
     totalPrice:0,
+    openid:''
   },
   onShow() {
-    
+    var openid=wx.getStorageSync('openid');
+    this.setData({
+      openid
+    })
 
   },
    // 商品的选中
@@ -86,6 +90,10 @@ Page({
   async handlePay(){
     // 1 判断收货地址
     const {address,totalNum}=this.data;
+    if(!openid){
+      await showToast({title:"您还未登录"});
+      return;
+    }
     if(!address.userName){
       await showToast({title:"您还没有选择收货地址"});
       return;

@@ -6,7 +6,7 @@
 已卖出
 </view> -->
 
-
+<view wx:if="{{openid!=''}}">
 <view class="goods_life">
   <view class="tab">
     <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
@@ -49,4 +49,9 @@
  </view>
   
  </view>
+</view>
+</view>
+<view class="nologin" wx:else>
+  <view>请先登录</view>
+  <image src=""></image>
 </view>

@@ -27,7 +27,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#CA6969",
-    "navigationBarTitleText": "同校淘物",
+    "navigationBarTitleText": "校园二手交易",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {

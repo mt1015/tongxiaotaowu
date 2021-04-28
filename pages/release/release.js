@@ -80,7 +80,13 @@ previewImg: function (e) {
 
 //点击发送按钮，触发上传数据到数据库操作
 formSubmit: function (e) {
-  console.log(e.detail.value);
+  if(wx.getStorageSync('openid')==''){
+    wx.showToast({
+      title: '请先登录！',
+      icon:'none'
+    })
+  }else{
+    console.log(e.detail.value);
   var that=this;
   let name=e.detail.value.name;
   let category=e.detail.value.category;
@@ -95,66 +101,54 @@ formSubmit: function (e) {
       icon: 'error',
       duration: 1000
     })
+  }else if(price==''){
+    wx.showToast({
+      title: '',
+      icon: 'error',
+      duration: 1000
+    })
   }else if(tel==''){
     wx.showToast({
       title: '联系方式不为空！',
       icon: 'error',
       duration: 1000
+    })}
+  else if(this.data.imgs==''){
+    wx.showToast({
+      title: '图片不能为空',
+      icon: 'error',
+      duration: 1000
     })
-  }else{
-        wx.request({
-          url: 'http://localhost:8081/myphp/app.php?action=create',
-          method: 'POST',
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'
-          },
-          data:{
+      }else{
+        wx.uploadFile({
+          url: 'http://localhost:8081/myphp/upload.php?',
+          filePath: that.data.imgs[0],
+          name: 'file',
+          formData:{
             openid:openid,
             name: name,
             category: category, 
             price: price,
             tel: tel,
             explain: explain,
-            image_url:that.data.imgs
           },
-          //如果上传成功，则开始上传图片
-          success:function(res){
-            
-            if(that.data.imgs!=''){
-              console.log(res.data[0]);
-              wx.uploadFile({
-                url: 'http://localhost:8081/myphp/upload.php?',
-                filePath: that.data.imgs[0],
-                name: 'file',
-                formData: {
-                  'newid': res.data.id
-                 },
-                
-              })
-            }
-            if (res.data.error==false) {
+          success:function(){
               wx.showToast({
                 title: '成功',
                 icon: 'success',
                 duration: 1000,
-                success: function () {
-                  // setTimeout(function () {
-                  //   wx.reLaunch({
-                  //     url: '/pages/myRelease/myRelease',
-                  //   })
-                  // }, 1000);
-                }
+                
               })
+              setTimeout(function () {
+                wx.reLaunch({
+                  url: '/pages/myRelease/myRelease',
+                })
+              }, 1000);
             }
-            else{
-              wx.showToast({
-                title: '添加成功',
-                icon: 'success',
-                duration: 2000
-              })
-            }
-          }
         })
+        
       }
+  }
+  
   }
 })
