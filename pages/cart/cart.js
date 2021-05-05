@@ -5,7 +5,7 @@ Page({
     cart: [],
     GoodsList:[],
     allChecked: false,
-    // hasList:false,          // 列表是否有数据
+    hasList:false,          // 列表是否有数据
     totalPrice:0,
     openid:''
   },
@@ -13,17 +13,24 @@ Page({
     var openid=wx.getStorageSync('openid');
     this.setData({
       openid
-    })
+    });
+    const cart = wx.getStorageSync("cart") || [];
+    this.setCart(cart);
+
 
   },
    // 商品的选中
    handeItemChange(e) {
     // 1 获取被修改的商品的id
-    const goods_id = e.currentTarget.dataset.id;
+    // console.log(e);
+    const id = e.currentTarget.dataset.id;
+    console.log(id);
     // 2 获取购物车数组 
     let { cart } = this.data;
+    console.log(this.data);
     // 3 找到被修改的商品对象
-    let index = cart.findIndex(v => v.goods_id === goods_id);
+    let index = cart.findIndex(v => v.id === id);
+    console.log(index);
     // 4 选中状态取反
     cart[index].checked = !cart[index].checked;
 
@@ -38,8 +45,10 @@ Page({
     let totalNum = 0;
     cart.forEach(v => {
       if (v.checked) {
-        totalPrice += v.num * v.goods_price;
+        totalPrice += v.num * v.price;
         totalNum += v.num;
+        // totalPrice +=  v[0].num * v[0].price;
+        // totalNum += v[0].num;
       } else {
         allChecked = false;
       }
@@ -68,7 +77,9 @@ Page({
     // 1 获取传递过来的参数 
     const { operation, id } = e.currentTarget.dataset;
     // 2 获取购物车数组
-    let { cart } = this.data;
+    // let { cart } = this.data;
+    let cart=wx.getStorageSync('cart');
+    console.log(cart);
     // 3 找到需要修改的商品的索引
     const index = cart.findIndex(v => v.goods_id === id);
     // 4 判断是否要执行删除

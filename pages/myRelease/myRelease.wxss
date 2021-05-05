@@ -37,6 +37,20 @@
   justify-items: center;
   align-content: center;
 }
+.off{
+  position: absolute;
+  width: 50rpx;
+  height: 80rpx;
+  font-size: 35rpx;
+  flex: 1;
+  left:500rpx;
+  padding-top: 60rpx;
+  justify-items: center;
+  align-content: center;
+  color: #9c9a9a;
+
+}
+
 .box_item {
   display: flex;
   flex: 3;

@@ -6,12 +6,12 @@
 <view class="home_banner">
         <swiper indicator-dots="{{true}}" circular="{{true}}" autoplay="{{true}}">
             <navigator url="../release/release">
-                <swiper-item class="c1"><image src="/image/banner01.jpg" /></swiper-item>
+                <swiper-item class="c1"><image src="http://localhost:8081/myphp/imgs/1619638572206-2021-04-29.jpg" /></swiper-item>
             </navigator>
             
-            <swiper-item class="c2"><image src="/image/banner01.jpg" /></swiper-item>
-            <swiper-item class="c3"><image src="/image/banner01.jpg" /></swiper-item>
-            <swiper-item class="c4"><image src="/image/banner01.jpg" /></swiper-item>
+            <swiper-item class="c2"><image src="http://localhost:8081/myphp/imgs/1619638572206-2021-04-29.jpg" /></swiper-item>
+            <swiper-item class="c3"><image src="http://localhost:8081/myphp/imgs/1619638572206-2021-04-29.jpg" /></swiper-item>
+            <swiper-item class="c4"><image src="http://localhost:8081/myphp/imgs/1619638572206-2021-04-29.jpg" /></swiper-item>
         </swiper>
 </view>
 <!-- 分类导航 -->
@@ -49,7 +49,7 @@
     <view class="category_item">
         <navigator url="../goods_other/goods_other">
             <image src="/image/other.png"></image>
-           <taxt>其他</taxt>
+           <taxt>其它</taxt>
         </navigator>
     </view>
 </view>
@@ -58,7 +58,7 @@
     <!-- 标题 -->
     <view class="pubTitle">
         <view class="txt">猜你喜欢</view>
-            <navigator class="more" url="">更多></navigator>
+            <!-- <navigator class="more" url="">更多></navigator> -->
     </view>
     <!-- 商品卡片展示 -->
     <view class="box_father">

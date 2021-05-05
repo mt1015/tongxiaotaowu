@@ -4,7 +4,15 @@ from{
 .button{
   color: var(--themeColor);
 }
-
+.eachImg .delete_btn{
+  position: absolute;
+  top: 300px;
+  right: 0;
+}
+/* .eachImg{
+  padding: 20rpx;
+  width: 700rpx;
+} */
 /* .submit view{
   border: 1px solid #666;
   margin-bottom: 10rpx;

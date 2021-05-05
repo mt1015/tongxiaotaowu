@@ -43,8 +43,9 @@
   </navigator>
   <view class="btn">
     <button wx:if="{{currentIndex==0}}" style="width:200rpx" bindtap="OffGoods" data-id="{{item.id}}">{{btn}}</button>
-    <button wx:if="{{currentIndex==-1}}" style="width:250rpx">已下架</button>
+    
   </view>
+  <text class="off" wx:if="{{currentIndex==-1}}" style="width:250rpx">商品已下架</text>
   
  </view>
   

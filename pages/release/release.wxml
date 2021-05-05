@@ -37,7 +37,7 @@
         </view>
       </view>
     </view>
-    <button class="upimg_btn" bindtap="chooseImg">拍照 / 上传</button>
+    <button class="upimg_btn" bindtap="chooseImg" wx:if="{{imgs==''}}">拍照 / 上传</button>
     <!-- 发送按钮 -->
     <button form-type="submit">确定</button>
 </form>

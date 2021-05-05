@@ -113,6 +113,12 @@
           "pathName": "pages/mydata/mydata",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
         }
       ]
     }

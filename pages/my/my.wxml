@@ -23,15 +23,18 @@
     <navigator class="myrelease" url="../myRelease/myRelease">
         我的发布
     </navigator>
+    <navigator class="myrelease" url="../order/order">
+        我的订单
+    </navigator>
     <!-- <navigator class="login" url="../login2/login2">
         登录
     </navigator> -->
     <navigator class="data" url="../mydata/mydata">
         我的资料
     </navigator>
-    <navigator class="advice" url="../school/school">
+    <!-- <navigator class="advice" url="../school/school">
         更改学校
-    </navigator>
+    </navigator> -->
     <navigator class="advice" url="../suggestion/suggestion">
         意见反馈
     </navigator>

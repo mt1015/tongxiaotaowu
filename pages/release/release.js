@@ -134,7 +134,7 @@ formSubmit: function (e) {
           },
           success:function(){
               wx.showToast({
-                title: '成功',
+                title: '发布成功',
                 icon: 'success',
                 duration: 1000,
                 

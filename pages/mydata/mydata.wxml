@@ -1,15 +1,16 @@
 <!--pages/mydata/mydata.wxml-->
 <view class="data">
   <view class="img">
-    {{}}
+    <image src="{{userinfo.avatarUrl}}"></image>
   </view>
   <view class="name">
-    {{}}
+    {{userinfo.nickName}}
   </view>
   <view class="sex">
-    {{}}
+    <view wx:if="{{userinfo.gender==2}}">女</view>
+    <view wx:else>男</view>
   </view>
   <view class="region">
-    地区：{{}}{{}}{{}}
+    地区：{{userinfo.country}}{{userinfo.province}}{{userinfo.city}}
   </view>
 </view>
