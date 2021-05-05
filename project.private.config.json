@@ -119,6 +119,12 @@
           "pathName": "pages/order/order",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
         }
       ]
     }

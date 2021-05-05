@@ -1,5 +1,5 @@
-import{getSetting,chooseAddress,openSetting} from "../../utils/asyncWx.js";
-// import regeneratorRuntime from '../../lib/runtime/runtime';
+import{getSetting,chooseAddress,openSetting,showModal,showToast} from "../../utils/asyncWx.js";
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
     cart: [],
@@ -100,15 +100,16 @@ Page({
   // 点击 结算 
   async handlePay(){
     // 1 判断收货地址
-    const {address,totalNum}=this.data;
+    // const {address,totalNum}=this.data;
+    const {openid,totalNum}=this.data;
     if(!openid){
       await showToast({title:"您还未登录"});
       return;
     }
-    if(!address.userName){
-      await showToast({title:"您还没有选择收货地址"});
-      return;
-    }
+    // if(!address.userName){
+    //   await showToast({title:"您还没有选择收货地址"});
+    //   return;
+    // }
     // 2 判断用户有没有选购商品
     if(totalNum===0){
       await showToast({title:"您还没有选购商品"});
@@ -116,7 +117,7 @@ Page({
     }
     // 3 跳转到 支付页面
     wx.navigateTo({
-      url: '/pages/pay/index'
+      url: '/pages/pay/pay'
     });
       
   }
