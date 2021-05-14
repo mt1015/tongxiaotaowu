@@ -1,0 +1,30 @@
+<!--pages/order_detail/order_detail.wxml-->
+<view class="order">
+  <view class="order_item"
+  wx:for="{{ordersList}}"
+  wx:key="order_number"
+  >
+        <view class="order_message">
+          <view class="order_img">
+            <image src="{{item.order_img}}"></image>
+          </view>
+          <view class="right_box">
+            <view class="goods_name">{{item.order_name}}</view>
+              <view class="goods_price_wrap">
+                <view class="goods_price">￥{{item.order_price}}</view>
+                <view class="cart_num_tool">
+                  <view class="goods_num">X 1</view>
+                </view>
+              </view>
+          </view>
+              
+        </view>
+
+  <view class="order_no_row">
+       <view class="order_no">订单编号：{{item.order_number}}</view>
+     </view>
+     <view class="order_time_row">
+       <view class="order_time">订单日期：{{item.order_time}}</view>
+     </view>
+  </view>
+</view>

@@ -25,14 +25,18 @@ page {
   padding: 10rpx;
   border-bottom: 1rpx solid #ccc;
 }
-.cart_content .cart_main .cart_item .cart_img_wrap {
+.cart_img_wrap {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 250rpx;
+  height: 200rpx;
 }
-.cart_content .cart_main .cart_item .cart_img_wrap image {
-  width: 80%;
+.cart_img_wrap image {
+  padding: 10rpx;
+  width: 250rpx;
+  height: 200rpx;
 }
 .cart_content .cart_main .cart_item .cart_info_wrap {
   flex: 4;
@@ -82,7 +86,7 @@ page {
 }
 .footer_tool .total_price_wrap .total_price .total_price_text {
   color: var(--themeColor);
-  font-size: 34rpx;
+  font-size: 40rpx;
   font-weight: 600;
 }
 .footer_tool .order_pay_wrap {

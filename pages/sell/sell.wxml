@@ -1,5 +1,4 @@
-<!--pages/order/order.wxml-->
-<view wx:if="{{openid!=''}}">
+<!--pages/sell/sell.wxml-->
 <view class="goods_life">
   <view class="tab">
     <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
@@ -7,13 +6,10 @@
     <hr class="line-style"/>
     </view>  
     <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
-      <text>已购买</text>
+      <text>已卖出</text>
       <hr class="line-style"/>
     </view>
   </view>
-  
-
-
 
  <view class="my_fabu">
   <view class="goods"  
@@ -34,13 +30,12 @@
     </view>
     
   </navigator>
-  
-  <text class="off" wx:if="{{currentIndex==2}}" style="width:250rpx">商品已购买</text>
-  <text class="off" wx:if="{{currentIndex==1}}" style="width:250rpx">待卖家确认</text>
+  <view class="btn">
+    <button wx:if="{{currentIndex==1}}" style="width:250rpx" bindtap="SoldGoods" data-id="{{item.goods_id}}">{{btn}}</button>
+  </view>
+  <text class="off" wx:if="{{currentIndex==2}}" style="width:250rpx">商品已卖出</text>
+ </view>
+</view>
+</view>
 
- </view>
-  
- </view>
-</view>
-</view>
 

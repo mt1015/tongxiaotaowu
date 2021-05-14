@@ -23,8 +23,11 @@
     <navigator class="myrelease" url="../myRelease/myRelease">
         我的发布
     </navigator>
-    <navigator class="myrelease" url="../order/order">
+    <navigator class="order" url="../order/order">
         我的订单
+    </navigator>
+    <navigator class="sell" url="../sell/sell">
+        我卖出的
     </navigator>
     <!-- <navigator class="login" url="../login2/login2">
         登录

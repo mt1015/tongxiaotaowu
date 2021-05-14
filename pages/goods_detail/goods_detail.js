@@ -5,7 +5,7 @@ Page({
     // MenuList:[],
     goodsList:{},
     id:null,
-    currentIndex:2
+    currentIndex:3
   },
   GoodsInfo:{},
   onLoad: function (options){

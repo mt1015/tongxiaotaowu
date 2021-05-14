@@ -20,7 +20,7 @@
         >
             <!-- 商品图片 -->
             <navigator class="cart_img_wrap">
-            <image mode="widthFix" src="{{item.image_url}}" ></image>
+            <image src="{{item.image_url}}" ></image>
             </navigator>
             <!-- 商品信息 -->
             <view class="cart_info_wrap">
@@ -43,7 +43,7 @@
       <view class="total_price">
         合计: <text class="total_price_text">￥{{totalPrice}}</text>
       </view>
-      <view>包含运费</view>
+      <!-- <view>包含运费</view> -->
     </view>
     <view class="order_pay_wrap" bindtap="handleOrderPay"  >
       支付({{totalNum}})

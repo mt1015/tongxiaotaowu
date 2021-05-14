@@ -2,5 +2,5 @@
   "usingComponents": {
     "GoodsBox":"../../components/GoodsBox/box"
   },
-  "navigationBarTitleText": "我的订单"
+  "navigationBarTitleText": "我卖出的"
 }

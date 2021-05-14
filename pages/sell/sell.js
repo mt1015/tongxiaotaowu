@@ -1,11 +1,12 @@
+// pages/sell/sell.js
 import { request} from "../../request/index.js";
 Page({
   data: {
     //分类
     // MenuList:[],
-    currentIndex: 0,
+    currentIndex: 1,
     GoodsList:[],
-    btn:'下架',
+    btn:'已收款',
     openid:''
   },
 
@@ -44,11 +45,10 @@ titleClick: function (e) {
   getCates(){
     var openid=wx.getStorageSync('openid');
     var currentIndex=this.data.currentIndex;
-    console.log(currentIndex);
     // console.log(openid)
     request({
-      // url: 'http://localhost:8081/myphp/app.php?action=read'
-      url: 'http://localhost:8081/myphp/mygoods.php?action=read&openid='+openid+'&currentIndex='+currentIndex
+      url: 'http://localhost:8081/myphp/mygoods.php?action=getorder&openid='+openid+'&currentIndex='+currentIndex
+      // url: 'http://localhost:8081/myphp/order.php?action=read&openid='+openid+'&currentIndex='+currentIndex
     })
     .then(res=>{
       this.setData({
@@ -60,16 +60,15 @@ titleClick: function (e) {
   skipTravelDetails:function(e){
     let id=e.currentTarget.dataset.id; //获取点击产品时拿到的id，就是data-id传过来的值
     let currentIndex=e.currentTarget.dataset.index;
-    console.log(e);
         // wx.navigateTo跳转页面的方法
         wx.navigateTo({
-            url: "../goods_detail/goods_detail?id="+id+'&currentIndex='+currentIndex,
+            url: "../order_detail/order_detail?id="+id+'&currentIndex='+currentIndex,
         })
   },
-  OffGoods:function(e){
+  SoldGoods:function(e){
     wx.showModal({
-      title: '下架商品',
-         content: '确定要下架该商品？',
+      title: '支付确认',
+         content: '确认支付已到账？',
          showCancel: true,//是否显示取消按钮
          cancelText:"点错了",//默认是“取消”
          cancelColor:'skyblue',//取消文字的颜色
@@ -80,14 +79,10 @@ titleClick: function (e) {
                //点击取消,默认隐藏弹框
             } else {
                //点击确定
-              //  temp.splice(index, 1),
-              //  that.setData({
-              //     tempFilePaths: temp,
-              //  })
               var id=e.currentTarget.dataset.id
               // console.log(id)
               wx.request({
-                url: 'http://localhost:8081/myphp/off.php?action=update',
+                url: 'http://localhost:8081/myphp/off.php?action=sell',
                 method:"POST",
                 header: {
                   'content-type': 'application/x-www-form-urlencoded'
@@ -97,7 +92,7 @@ titleClick: function (e) {
                 },
                 success(res){
                   wx.reLaunch({
-                    url: '../myRelease/myRelease',
+                    url: '../sell/sell',
                   })
                 }
               })
@@ -108,4 +103,5 @@ titleClick: function (e) {
     })
     
   }
+  
  })

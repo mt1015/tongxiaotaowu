@@ -1,0 +1,28 @@
+/* pages/order_detail/order_detail.wxss */
+.order {
+  display: flex;
+}
+.order_message{
+  display: flex;
+  border-bottom: 1px solid #666;
+  width: 750rpx;
+}
+.order_img image{
+  padding: 10rpx;
+  height: 300rpx;
+  width: 300rpx;
+}
+.right_box .goods_name{
+  padding: 20rpx;
+  font-size: 40rpx;
+}
+.right_box .goods_price{
+  color: red;
+  padding-top: 80rpx;
+  font-size: 40rpx;
+}
+.right_box .goods_num{
+  right: 0;
+}
+
+

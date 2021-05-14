@@ -125,6 +125,17 @@
           "pathName": "pages/pay/pay",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/order_detail/order_detail",
+          "pathName": "pages/order_detail/order_detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/sell/sell",
+          "pathName": "pages/sell/sell",
+          "scene": null
         }
       ]
     }

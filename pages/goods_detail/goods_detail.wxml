@@ -29,7 +29,7 @@
     请联系我：{{goodsList[0].tel}}
   </view>
   <!-- 底部操作按钮 -->
-  <view class="button" wx:if="{{currentIndex==2}}">
+  <view class="button" wx:if="{{currentIndex==3}}">
     <!-- <view class="tool_item">
     <view class="iconfont icon-kefu"></view>
     <view>客服</view>

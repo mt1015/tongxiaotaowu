@@ -38,7 +38,7 @@ Page({
   },
   login(){
     var userinfo=wx.getStorageSync('userInfo');
-    console.log(userinfo);
+    // console.log(userinfo);
     var name=userinfo.nickName;
     var imgs=userinfo.avatarUrl;
     var sex = userinfo.gender;
@@ -65,6 +65,8 @@ Page({
           },
           success: function (res) {
             console.log(res.data);
+            // token=res.data.data.token;
+            // console.log(token);
             // wx.setStorageSync('name', res.data.nick);//将获取信息写入本地缓存
             wx.setStorageSync('openid', res.data.openid);
             // wx.setStorageSync('imgUrl', res.data.imgurl);

@@ -1,4 +1,4 @@
-/* pages/order/order.wxss */
+/* pages/sell/sell.wxss */
 .tab{
   display: flex;
   width: 100%;
@@ -27,7 +27,7 @@
 }
 .btn{
   position: absolute;
-  width: 50rpx;
+  width: 80rpx;
   height: 80rpx;
   font-size: 45rpx;
   flex: 1;
@@ -56,10 +56,7 @@
   flex-wrap: nowrap;
   border-bottom: 1px solid #666;
 }
-/* .box_item {
-  display: flex;
-  flex-wrap: wrap;
-} */
+
 .box_item .left_box {
   position: relative;
   display: flex;

@@ -63,10 +63,10 @@
     <!-- 商品卡片展示 -->
     <view class="box_father">
         <view class="box"
-    wx:for="{{GoodsList}}">
+    wx:for="{{GoodsList}}"
+    wx:key='id'>
         <!-- 调用box组件实现商品卡片 -->
         <Box bindtap="skipTravelDetails" data-id="{{item.id}}" goods_title="{{item.name}}" goods_price="{{item.price}}" goods_src="{{item.image_url}}" goods_url=""></Box>
-        
     </view>
     </view>
     

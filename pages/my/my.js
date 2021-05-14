@@ -35,7 +35,10 @@ Page({
                 url: '/pages/my/my',
               })
             }, 1000);
-          }
+          },
+          fail:(err)=>{
+            console.log(err);
+        }
           
         })
   },
@@ -70,6 +73,7 @@ Page({
             console.log(res.data);
             // wx.setStorageSync('name', res.data.nick);//将获取信息写入本地缓存
             wx.setStorageSync('openid', res.data.openid);
+            wx.setStorageSync('token', res.data.token);
             // wx.setStorageSync('imgUrl', res.data.imgurl);
             // wx.setStorageSync('sex', res.data.sex);
           }

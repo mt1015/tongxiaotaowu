@@ -85,6 +85,11 @@ formSubmit: function (e) {
       title: '请先登录！',
       icon:'none'
     })
+    setTimeout(function () {
+      wx.reLaunch({
+        url: '/pages/my/my',
+      })
+    }, 1000);
   }else{
     console.log(e.detail.value);
   var that=this;
