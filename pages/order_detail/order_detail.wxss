@@ -13,16 +13,28 @@
   width: 300rpx;
 }
 .right_box .goods_name{
-  padding: 20rpx;
+  padding: 30rpx;
   font-size: 40rpx;
 }
 .right_box .goods_price{
   color: red;
-  padding-top: 80rpx;
+  padding-top: 100rpx;
+  padding-left: 20rpx;
   font-size: 40rpx;
 }
-.right_box .goods_num{
-  right: 0;
+/* .cart_num_tool{
+  display: auto;
+  left: -1000rpx;
+} */
+
+.order_no_row,.order_time_row{
+  padding-top: 10rpx;
+}
+.order_no_row .order_no{
+  font-size: 35rpx;
+}
+.order_time_row .order_time{
+  font-size: 35rpx;
 }
 
 

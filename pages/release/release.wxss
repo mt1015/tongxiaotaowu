@@ -9,6 +9,11 @@ from{
   top: 300px;
   right: 0;
 }
+
+.picker .label{
+  color: var(--themeColor);
+  font-size:40rpx;
+}
 /* .eachImg{
   padding: 20rpx;
   width: 700rpx;

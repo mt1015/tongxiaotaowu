@@ -26,7 +26,12 @@ handleCartAdd:function(e) {
     wx.showToast({
       title: '请先登录',
       icon: 'none'
-    })
+    });
+    setTimeout(function () {
+      wx.reLaunch({
+        url: '/pages/my/my',
+      })
+    }, 1000);
   }else{
     // 1 获取缓存中的购物车 数组
   let cart = wx.getStorageSync("cart") || [];

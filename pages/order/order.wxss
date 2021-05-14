@@ -74,6 +74,13 @@
 }
 .title{
   padding-top: 10rpx;
+  width: 250rpx;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+  word-break:break-all;
 }
 .right_box{
   padding-top: 20rpx;

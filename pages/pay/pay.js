@@ -144,19 +144,12 @@ Page({
             icon: 'none',
             duration: 2500
           });
-          wx.navigateTo({
-            url: '/pages/order/order'
-          });
+          setTimeout(function () {
+            wx.reLaunch({
+              url: '/pages/order/order',
+            })
+          }, 1000);
         }
-        
-
-
-        
-
-
-
-
-
       }
     })
   },

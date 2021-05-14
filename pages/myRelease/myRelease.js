@@ -8,7 +8,11 @@ Page({
     btn:'下架',
     openid:''
   },
-
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../my/my'
+    })
+  },
  //swiper切换时会调用
  pagechange: function (e) {
   if ("touch" === e.detail.source) {
@@ -26,10 +30,7 @@ titleClick: function (e) {
       currentIndex: e.currentTarget.dataset.idx
     })
     this.getCates();
-    
 },
-
-
 
   // Cates:[],
   onLoad: function (options) {
@@ -44,7 +45,7 @@ titleClick: function (e) {
   getCates(){
     var openid=wx.getStorageSync('openid');
     var currentIndex=this.data.currentIndex;
-    console.log(currentIndex);
+    // console.log(currentIndex);
     // console.log(openid)
     request({
       // url: 'http://localhost:8081/myphp/app.php?action=read'
@@ -60,7 +61,7 @@ titleClick: function (e) {
   skipTravelDetails:function(e){
     let id=e.currentTarget.dataset.id; //获取点击产品时拿到的id，就是data-id传过来的值
     let currentIndex=e.currentTarget.dataset.index;
-    console.log(e);
+    // console.log(e);
         // wx.navigateTo跳转页面的方法
         wx.navigateTo({
             url: "../goods_detail/goods_detail?id="+id+'&currentIndex='+currentIndex,
@@ -80,10 +81,6 @@ titleClick: function (e) {
                //点击取消,默认隐藏弹框
             } else {
                //点击确定
-              //  temp.splice(index, 1),
-              //  that.setData({
-              //     tempFilePaths: temp,
-              //  })
               var id=e.currentTarget.dataset.id
               // console.log(id)
               wx.request({

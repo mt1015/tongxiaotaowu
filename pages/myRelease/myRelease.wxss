@@ -75,6 +75,14 @@
 }
 .title{
   padding-top: 10rpx;
+  /*超出width显示...*/
+  width: 250rpx;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+  word-break:break-all;
 }
 .right_box{
   padding-top: 20rpx;

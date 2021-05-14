@@ -1,14 +1,18 @@
 import { request} from "../../request/index.js";
 Page({
   data: {
-    //分类
-    // MenuList:[],
     currentIndex: 1,
     GoodsList:[],
-    // btn:'下架',
     openid:''
   },
-
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../my/my'
+    })
+  },
+  onShow:function(){
+    this.getCates();
+  },
  //swiper切换时会调用
  pagechange: function (e) {
   if ("touch" === e.detail.source) {
@@ -29,22 +33,18 @@ titleClick: function (e) {
     
 },
 
-
-
-  // Cates:[],
   onLoad: function (options) {
     this.getCates();
     var openid=wx.getStorageSync('openid');
     this.setData({
       openid
     })
-    // this.getGoods();
   },
   //获取分类接口数据
   getCates(){
     var openid=wx.getStorageSync('openid');
     var currentIndex=this.data.currentIndex;
-    console.log(currentIndex);
+    // console.log(currentIndex);
     // console.log(openid)
     request({
       url: 'http://localhost:8081/myphp/mygoods.php?action=getorder&openid='+openid+'&currentIndex='+currentIndex

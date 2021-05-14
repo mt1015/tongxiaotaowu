@@ -14,7 +14,7 @@
   </view>
   <view class="right_box">
     <label class="title" for="">{{goods_title}}</label>
-    <text>\n</text>
+    <!-- <text>\n</text> -->
     <view class="right_price">
       <label class="price" for="">{{goods_price}}￥</label>
     </view>

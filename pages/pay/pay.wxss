@@ -83,6 +83,8 @@ page {
   flex: 5;
   padding-right: 15rpx;
   text-align: right;
+  margin-top: 16rpx;
+  font-size: 38rpx;
 }
 .footer_tool .total_price_wrap .total_price .total_price_text {
   color: var(--themeColor);

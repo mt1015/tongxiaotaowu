@@ -19,7 +19,6 @@
     "pages/order/order",
     "pages/pay/pay",
     "pages/sell/sell",
-    "pages/auth/auth",
     "pages/mydata/mydata",
     "pages/suggestion/suggestion",
     "pages/school/school",

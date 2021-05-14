@@ -9,7 +9,11 @@ Page({
     btn:'已收款',
     openid:''
   },
-
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../my/my'
+    })
+  },
  //swiper切换时会调用
  pagechange: function (e) {
   if ("touch" === e.detail.source) {
@@ -27,28 +31,23 @@ titleClick: function (e) {
       currentIndex: e.currentTarget.dataset.idx
     })
     this.getCates();
-    
 },
 
 
-
-  // Cates:[],
   onLoad: function (options) {
     this.getCates();
     var openid=wx.getStorageSync('openid');
     this.setData({
       openid
     })
-    // this.getGoods();
   },
-  //获取分类接口数据
+  //获取已售卖的商品
   getCates(){
     var openid=wx.getStorageSync('openid');
     var currentIndex=this.data.currentIndex;
     // console.log(openid)
     request({
-      url: 'http://localhost:8081/myphp/mygoods.php?action=getorder&openid='+openid+'&currentIndex='+currentIndex
-      // url: 'http://localhost:8081/myphp/order.php?action=read&openid='+openid+'&currentIndex='+currentIndex
+      url: 'http://localhost:8081/myphp/mygoods.php?action=getsell&openid='+openid+'&currentIndex='+currentIndex
     })
     .then(res=>{
       this.setData({

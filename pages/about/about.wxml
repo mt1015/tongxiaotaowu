@@ -1,6 +1,6 @@
 <!--pages/about/about.wxml-->
 <view class="about">
-  <text>
-    这里是同校淘物，你可以在这里找到你想要的二手物品，也可以发布你的闲置物品
+  <text style="font-size:34rpx; padding:10rpx">
+    这里是校园二手交易平台，你可以在这里找到你想要的二手物品，也可以发布你的闲置物品
   </text>
 </view>

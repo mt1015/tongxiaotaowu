@@ -3,9 +3,9 @@
 <form class="submit" bindsubmit="formSubmit">
     <!-- 选择物品分类 -->
     <view class="section">
-      <picker name="category" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker name="category" bindchange="bindPickerChange" value="{{index}}" range="{{array}}" style="width: 90%;">
         <view class="picker">
-          {{array[index]}}
+          <label class="label">{{array[index]}}</label>
         </view>
       </picker>
       <view class="more">></view>
@@ -39,6 +39,7 @@
     </view>
     <button class="upimg_btn" bindtap="chooseImg" wx:if="{{imgs==''}}">拍照 / 上传</button>
     <!-- 发送按钮 -->
+    <text>\n</text>
     <button form-type="submit">确定</button>
 </form>
 </view>

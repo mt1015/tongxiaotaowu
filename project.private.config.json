@@ -73,8 +73,8 @@
           "scene": null
         },
         {
-          "name": "pages/post/post",
-          "pathName": "pages/post/post",
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
           "query": "",
           "scene": null
         },
@@ -135,6 +135,7 @@
         {
           "name": "pages/sell/sell",
           "pathName": "pages/sell/sell",
+          "query": "",
           "scene": null
         }
       ]

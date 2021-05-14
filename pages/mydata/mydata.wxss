@@ -1,10 +1,16 @@
 /* pages/mydata/mydata.wxss */
 .img{
   height: 500rpx;
-  margin-bottom: 10rpx;
+  /* margin-bottom: 10rpx; */
+}
+image{
+  height: 500rpx;
 }
 .name,.sex,.region{
+  height: 100rpx;
   font-size: large;
-  margin-bottom: 10rpx;
+  /* margin-top: 100rpx; */
+  padding-top: 50rpx;
+  /* margin-bottom: 10rpx; */
   border-bottom: 1rpx solid #ccc;
 }

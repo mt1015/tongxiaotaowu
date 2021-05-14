@@ -20,7 +20,17 @@
   font-size: large;
 }  */
 
-
+.title{
+  width: 350rpx;
+  padding-left: 8rpx;
+  display:-webkit-box;
+  -webkit-line-clamp:1;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+  word-break:break-all;
+}
 
 image{
   width: 100%;
@@ -29,7 +39,8 @@ image{
 }
 /* 价格样式 */
 .price{
-  padding: 8rpx;
+  padding-left: 8rpx;
+  margin-top: -300rpx;
   color: red;
   font-size: large;
 }

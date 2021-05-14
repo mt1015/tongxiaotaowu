@@ -91,7 +91,7 @@ formSubmit: function (e) {
       })
     }, 1000);
   }else{
-    console.log(e.detail.value);
+    // console.log(e.detail.value);
   var that=this;
   let name=e.detail.value.name;
   let category=e.detail.value.category;
@@ -142,7 +142,7 @@ formSubmit: function (e) {
                 title: '发布成功',
                 icon: 'success',
                 duration: 1000,
-                
+                mask: true
               })
               setTimeout(function () {
                 wx.reLaunch({

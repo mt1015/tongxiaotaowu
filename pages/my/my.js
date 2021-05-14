@@ -10,13 +10,13 @@ Page({
     const openid=wx.getStorageSync('openid');
     this.setData({userinfo,openid})
   },
-  login:function(){
-    setTimeout(function () {
-      wx.reLaunch({
-        url: '/pages/login2/login2',
-      })
-    }, 1000);
-  },
+  // login:function(){
+  //   setTimeout(function () {
+  //     wx.reLaunch({
+  //       url: '/pages/login2/login2',
+  //     })
+  //   }, 1000);
+  // },
   getUserProfile: function (res) {
     wx.getUserProfile({
           desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
@@ -29,18 +29,18 @@ Page({
               userInfo: res.userInfo,
               hasUserInfo: true
             })
-            this.login()
             setTimeout(function () {
               wx.reLaunch({
                 url: '/pages/my/my',
               })
-            }, 1000);
+            }, 2000);
+            this.login()
           },
           fail:(err)=>{
             console.log(err);
         }
-          
-        })
+        });
+        
   },
   login(){
     var userinfo=wx.getStorageSync('userInfo');
