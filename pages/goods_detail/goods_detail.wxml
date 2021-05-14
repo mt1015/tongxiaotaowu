@@ -25,6 +25,8 @@
   <view class="explain">
     {{goodsList[0].explain}}
   </view>
+  <text>\n</text>
+  <text>\n</text>
   <view class="tel">
     请联系我：{{goodsList[0].tel}}
   </view>

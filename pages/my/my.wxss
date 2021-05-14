@@ -117,8 +117,12 @@ page {
   padding-top: 10rpx;
 }
 .tool navigator{
-  height: 60rpx;
+  height: 70rpx;
   background-color: #fff;
   border: 1rpx solid #ccc;
   font-size: 35rpx;
+  justify-content: center;
+  padding-top: 20rpx;
+  padding-left: 10rpx;
 }
+

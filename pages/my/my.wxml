@@ -21,7 +21,7 @@
     收藏
     </navigator> -->
     <navigator class="myrelease" url="../myRelease/myRelease">
-        我的发布
+        <label class="item">我的发布</label>
     </navigator>
     <navigator class="order" url="../order/order">
         我的订单

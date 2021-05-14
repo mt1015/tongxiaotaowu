@@ -106,10 +106,16 @@ formSubmit: function (e) {
       icon: 'error',
       duration: 1000
     })
-  }else if(price==''){
+  }else if(price===''|| price==null){
     wx.showToast({
-      title: '',
+      title: '价格不能为空！',
       icon: 'error',
+      duration: 1000
+    })
+  }else if(price<0 || (isNaN(price)&& typeof price != 'number')){
+    wx.showToast({
+      title: '请输入正确的价格！',
+      icon: 'none',
       duration: 1000
     })
   }else if(tel==''){

@@ -24,13 +24,13 @@ Page({
     // 1 获取被修改的商品的id
     // console.log(e);
     const id = e.currentTarget.dataset.id;
-    console.log(id);
+    // console.log(id);
     // 2 获取购物车数组 
     let { cart } = this.data;
-    console.log(this.data);
+    // console.log(this.data);
     // 3 找到被修改的商品对象
     let index = cart.findIndex(v => v.id === id);
-    console.log(index);
+    // console.log(index);
     // 4 选中状态取反
     cart[index].checked = !cart[index].checked;
 
@@ -79,7 +79,7 @@ Page({
     // 2 获取购物车数组
     // let { cart } = this.data;
     let cart=wx.getStorageSync('cart');
-    console.log(cart);
+    // console.log(cart);
     // 3 找到需要修改的商品的索引
     const index = cart.findIndex(v => v.goods_id === id);
     // 4 判断是否要执行删除
