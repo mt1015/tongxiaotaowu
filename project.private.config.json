@@ -137,6 +137,18 @@
           "pathName": "pages/sell/sell",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/allRelease/myRelease",
+          "pathName": "pages/allRelease/myRelease",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/look_suggestion/look_suggestion",
+          "pathName": "pages/look_suggestion/look_suggestion",
+          "query": "",
+          "scene": null
         }
       ]
     }

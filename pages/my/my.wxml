@@ -20,25 +20,31 @@
     <!-- <navigator class="collect" url="../collect/collect">
     收藏
     </navigator> -->
+    <navigator class="myrelease" url="../allRelease/myRelease" wx:if="{{is_manage==1}}">
+        <label class="item">所有发布</label>
+    </navigator>
     <navigator class="myrelease" url="../myRelease/myRelease">
         <label class="item">我的发布</label>
     </navigator>
-    <navigator class="order" url="../order/order">
-        我的订单
+    <navigator class="order" url="../order/order" >
+        <label class="item">我的订单</label>
     </navigator>
-    <navigator class="sell" url="../sell/sell">
+    <navigator class="sell" url="../sell/sell" >
         我卖出的
     </navigator>
     <!-- <navigator class="login" url="../login2/login2">
         登录
     </navigator> -->
-    <navigator class="data" url="../mydata/mydata">
+    <navigator class="data" url="../mydata/mydata" wx:if="{{is_manage==0}}">
         我的资料
     </navigator>
     <!-- <navigator class="advice" url="../school/school">
         更改学校
     </navigator> -->
-    <navigator class="advice" url="../suggestion/suggestion">
+    <navigator class="advice" url="../suggestion/suggestion" wx:if="{{is_manage==0}}">
+        意见反馈
+    </navigator>
+    <navigator class="advice" url="../look_suggestion/look_suggestion" wx:if="{{is_manage==1}}">
         意见反馈
     </navigator>
     <navigator class="about" url="../about/about">

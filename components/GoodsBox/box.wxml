@@ -16,7 +16,7 @@
     <label class="title" for="">{{goods_title}}</label>
     <!-- <text>\n</text> -->
     <view class="right_price">
-      <label class="price" for="">{{goods_price}}￥</label>
+      <label class="price" for="">￥{{goods_price}}</label>
     </view>
   </view>
 </navigator>

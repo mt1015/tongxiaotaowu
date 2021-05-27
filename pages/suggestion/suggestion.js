@@ -11,7 +11,8 @@ Page({
   formSubmit: function (e){
     // var that=this;
     let content=e.detail.value.content;
-    console.log(content);
+    const name=wx.getStorageSync('name');
+    // console.log(content);
     if(content!=''&&content.length<1000){
       wx.request({
         url: 'http://localhost:8081/myphp/suggestion.php?action=create',
@@ -20,7 +21,8 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         data:{
-          content:content
+          content:content,
+          name:name
         },
         success:function(res){
           wx.showToast({

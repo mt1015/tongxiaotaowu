@@ -1,14 +1,15 @@
 // pages/my/my.js
 Page({
-
   data: {
     userinfo:{},
-    openid:''
+    openid:'',
+    is_manage:''
   },
   onShow(){
     const userinfo=wx.getStorageSync('userInfo');
     const openid=wx.getStorageSync('openid');
-    this.setData({userinfo,openid})
+    const is_manage=wx.getStorageSync('is_manage');
+    this.setData({userinfo,openid,is_manage})
   },
   // login:function(){
   //   setTimeout(function () {
@@ -17,6 +18,7 @@ Page({
   //     })
   //   }, 1000);
   // },
+  
   getUserProfile: function (res) {
     wx.getUserProfile({
           desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
@@ -39,12 +41,11 @@ Page({
           fail:(err)=>{
             console.log(err);
         }
-        });
-        
+        });  
   },
   login(){
     var userinfo=wx.getStorageSync('userInfo');
-    console.log(userinfo);
+    // console.log(userinfo);
     var name=userinfo.nickName;
     var imgs=userinfo.avatarUrl;
     var sex = userinfo.gender;
@@ -70,10 +71,11 @@ Page({
             'content-type': 'application/json'
           },
           success: function (res) {
-            console.log(res.data);
-            // wx.setStorageSync('name', res.data.nick);//将获取信息写入本地缓存
+            // console.log(res.data);
+            wx.setStorageSync('name', res.data.nick);//将获取信息写入本地缓存
             wx.setStorageSync('openid', res.data.openid);
             wx.setStorageSync('token', res.data.token);
+            wx.setStorageSync('is_manage', res.data.is_manage);
             // wx.setStorageSync('imgUrl', res.data.imgurl);
             // wx.setStorageSync('sex', res.data.sex);
           }

@@ -27,9 +27,9 @@
     </view>
     <view class="right_box">
       <label class="title" for="">{{item.order_name}}</label>
-      <text>\n</text>
+      <!-- <text>\n</text> -->
       <view class="right_price">
-        <label class="price" for="">{{item.order_price}}￥</label>
+        <label class="price" for="">￥{{item.order_price}}</label>
       </view>
     </view>
     

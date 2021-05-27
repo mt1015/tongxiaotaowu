@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "GoodsBox":"../../components/GoodsBox/box"
+  },
+  "navigationBarTitleText": "所有发布"
+}

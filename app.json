@@ -21,10 +21,12 @@
     "pages/sell/sell",
     "pages/mydata/mydata",
     "pages/suggestion/suggestion",
+    "pages/look_suggestion/look_suggestion",
     "pages/school/school",
     "pages/about/about",
     "pages/release/release",
     "pages/myRelease/myRelease",
+    "pages/allRelease/myRelease",
     "pages/search/search",
     "pages/index/index"
   ],

@@ -1,19 +1,18 @@
-// pages/sell/sell.js
 import { request} from "../../request/index.js";
 Page({
   data: {
     //分类
     // MenuList:[],
-    currentIndex: 1,
+    currentIndex: 0,
     GoodsList:[],
-    btn:'已收款',
+    btn:'下架',
     openid:''
   },
-  // onUnload: function () {
-  //   wx.reLaunch({
-  //     url: '../my/my'
-  //   })
-  // },
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../my/my'
+    })
+  },
  //swiper切换时会调用
  pagechange: function (e) {
   if ("touch" === e.detail.source) {
@@ -33,25 +32,28 @@ titleClick: function (e) {
     this.getCates();
 },
 
-
+  // Cates:[],
   onLoad: function (options) {
     this.getCates();
     var openid=wx.getStorageSync('openid');
     this.setData({
       openid
     })
+    // this.getGoods();
   },
-  //获取已售卖的商品
+  //获取分类接口数据
   getCates(){
     var openid=wx.getStorageSync('openid');
     var currentIndex=this.data.currentIndex;
+    // console.log(currentIndex);
     // console.log(openid)
     request({
-      url: 'http://localhost:8081/myphp/mygoods.php?action=getsell&openid='+openid+'&currentIndex='+currentIndex
+      url: 'http://localhost:8081/myphp/allgoods.php?action=read&openid='+openid+'&currentIndex='+currentIndex
     })
     .then(res=>{
+      console.log(res);
       this.setData({
-        GoodsList:res.data.message
+        GoodsList:res.data.goods
       })
     })
   },
@@ -59,15 +61,16 @@ titleClick: function (e) {
   skipTravelDetails:function(e){
     let id=e.currentTarget.dataset.id; //获取点击产品时拿到的id，就是data-id传过来的值
     let currentIndex=e.currentTarget.dataset.index;
+    // console.log(e);
         // wx.navigateTo跳转页面的方法
         wx.navigateTo({
-            url: "../order_detail/order_detail?id="+id+'&currentIndex='+currentIndex,
+            url: "../goods_detail/goods_detail?id="+id+'&currentIndex='+currentIndex,
         })
   },
-  SoldGoods:function(e){
+  OffGoods:function(e){
     wx.showModal({
-      title: '支付确认',
-         content: '确认支付已到账？',
+      title: '下架商品',
+         content: '确定要下架该商品？',
          showCancel: true,//是否显示取消按钮
          cancelText:"点错了",//默认是“取消”
          cancelColor:'skyblue',//取消文字的颜色
@@ -81,7 +84,7 @@ titleClick: function (e) {
               var id=e.currentTarget.dataset.id
               // console.log(id)
               wx.request({
-                url: 'http://localhost:8081/myphp/off.php?action=sell',
+                url: 'http://localhost:8081/myphp/off.php?action=update',
                 method:"POST",
                 header: {
                   'content-type': 'application/x-www-form-urlencoded'
@@ -91,7 +94,7 @@ titleClick: function (e) {
                 },
                 success(res){
                   wx.reLaunch({
-                    url: '../sell/sell',
+                    url: '../myRelease/myRelease',
                   })
                 }
               })
@@ -102,5 +105,4 @@ titleClick: function (e) {
     })
     
   }
-  
  })

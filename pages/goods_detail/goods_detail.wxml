@@ -9,7 +9,7 @@
   <view class="content">
     <view class="title_left">
       <view class="price" style="color:red">
-        {{goodsList[0].price}}￥
+        ￥{{goodsList[0].price}}
       </view>
       <view class="name">
         {{goodsList[0].name}}

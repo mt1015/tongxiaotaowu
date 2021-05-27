@@ -8,11 +8,11 @@ Page({
     btn:'下架',
     openid:''
   },
-  onUnload: function () {
-    wx.reLaunch({
-      url: '../my/my'
-    })
-  },
+  // onUnload: function () {
+  //   wx.reLaunch({
+  //     url: '../my/my'
+  //   })
+  // },
  //swiper切换时会调用
  pagechange: function (e) {
   if ("touch" === e.detail.source) {

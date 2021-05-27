@@ -10,7 +10,7 @@
 <view class="goods_life">
   <view class="tab">
     <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
-    <text>已发布</text>
+    <text>发布中</text>
     <hr class="line-style"/>
     </view>  
     <view class="{{-1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='-1'>
@@ -36,7 +36,7 @@
       <label class="title" for="">{{item.name}}</label>
       <!-- <text>\n</text> -->
       <view class="right_price">
-        <label class="price" for="">￥{{item.price}}</label>
+        <label class="price" for="">{{item.price}}￥</label>
       </view>
     </view>
     

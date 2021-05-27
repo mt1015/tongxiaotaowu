@@ -1,0 +1,19 @@
+/* pages/look_suggestion/look_suggestion.wxss */
+.item{
+  display: flex;
+}
+.suggestion{
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  margin: 20rpx;
+}
+.name{
+  height: 60rpx;
+  font-size: 40rpx;
+}
+.content{
+  height: 100rpx;
+  width: 710rpx;
+  font-size: 34rpx;
+  border: 1px solid #666;
+}
